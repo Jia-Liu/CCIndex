@@ -1,0 +1,17 @@
+Preview version of CCIndex for hbase.
+
+CCIndex is short for Complemental Clustering Index.
+
+This version is built on HBase 0.20.2, Thank James Kennedy the author of transactional table for some of our codes are based on his work.
+
+Codes of CCIndex  are in the following two packages :
+	org.apache.hadoop.hbase.client.ccindex
+	org.apache.hadoop.hbase.regionserver.ccindex
+There is a test case of CCIndex :
+	org.apache.hadoop.hbase.CCIndexTestCase.java
+The test class named "MultiDimensionRangeQueryTest" is used to perform Multi-Dimensional Range Query.
+
+Current status:
+ Strip CCIndex from transctional table and migrate CCIndex from HBase 0.20.2 (the preview version of CCIndex) to HBase 0.89.0. (coming soon)
+ Add log system to ensure the data consistency.
+ Reconstruct the CCIndex codes based on the coprocessor framework.
