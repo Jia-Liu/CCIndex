@@ -6,8 +6,8 @@ import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.client.ccindex.IndexSpecification;
 import org.apache.hadoop.hbase.client.ccindex.IndexedTableDescriptor;
 import org.apache.hadoop.hbase.regionserver.HRegionServer;
-import org.apache.hadoop.hbase.regionserver.ccindex.IndexedRegionServer.Checker;
-import org.apache.hadoop.hbase.regionserver.ccindex.IndexedRegionServer.Worker;
+
+
 
 public class CheckerMaster extends Thread {
 	long sleeptime = 260000;
@@ -60,7 +60,7 @@ public class CheckerMaster extends Thread {
 				sleep(this.sleeptime);
 				int size = IndexedRegionServer.workers.size();
 				int freeN = 0;
-				for (Worker w : IndexedRegionServer.workers.values()) {
+				for (IndexedRegionServer.Worker w : IndexedRegionServer.workers.values()) {
 					if (w.free) {
 						freeN++;
 					}
