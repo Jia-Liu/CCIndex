@@ -24,7 +24,7 @@
 <configuration>
   <property>
     <name>hbase.rootdir</name>
-    <value>hdfs://node23:54310/hbase</value>
+    <value>file:///tmp/hbase-${user.name}/hbase</value>
     <description>The directory shared by region servers.
     Should be fully-qualified to include the filesystem to use.
     E.g: hdfs://NAMENODE_SERVER:PORT/HBASE_ROOTDIR
@@ -461,7 +461,7 @@
   -->
   <property>
     <name>hbase.zookeeper.quorum</name>
-    <value>node23</value>
+    <value>localhost</value>
     <description>Comma separated list of servers in the ZooKeeper Quorum.
     For example, "host1.mydomain.com,host2.mydomain.com,host3.mydomain.com".
     By default this is set to localhost for local and pseudo-distributed modes
@@ -547,7 +547,7 @@
 
   <property>
     <name>hbase.regionserver.impl</name>
-    <value>org.apache.hadoop.hbase.regionserver.tableindexed.IndexedRegionServer</value>
+    <value>org.apache.hadoop.hbase.regionserver.ccindex.IndexedRegionServer</value>
     <description>Property from ZooKeeper's config zoo.cfg.
     Limit on number of concurrent connections (at the socket level) that a
     single client, identified by IP address, may make to a single member of
